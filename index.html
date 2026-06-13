@@ -79,7 +79,7 @@ html,body{height:100%;overflow:hidden;font-family:'Nunito',sans-serif;font-weigh
 .trophy-ico{font-size:40px;filter:grayscale(1) opacity(.25)}
 .trophy-card.got .trophy-ico{filter:none}
 .trophy-name{font-size:14px;font-weight:900}
-.profile-wrap{display:flex;flex-direction:column;align-items:center;gap:16px;padding:24px 20py}
+.profile-wrap{display:flex;flex-direction:column;align-items:center;gap:16px;padding:24px 20px}
 .profile-card{background:var(--panel);border:3px solid var(--bdr);border-radius:22px;width:100%;padding:18px}
 .profile-row{display:flex;align-items:center;gap:14px;font-size:21px;padding:10px 0}
 .profile-row+.profile-row{border-top:2px solid var(--bdr)}
@@ -114,21 +114,21 @@ html,body{height:100%;overflow:hidden;font-family:'Nunito',sans-serif;font-weigh
   <div class="topbar">
     <span class="lv-badge" id="lv-badge">LVL 7</span>
     <div class="tb-stat">
-      <span class="tb-ico" style="animation:streakFlame 1.2s ease-in-out infinite">ð¥</span>
+      <span class="tb-ico" style="animation:streakFlame 1.2s ease-in-out infinite">🔥</span>
       <span class="tb-num" id="streak-num" style="color:var(--orange)">5</span>
     </div>
     <div class="tb-stat">
-      <span class="tb-ico">ð</span>
+      <span class="tb-ico">💎</span>
       <span class="tb-num" id="xp-num" style="color:var(--blue)">340</span>
     </div>
     <div class="tb-stat">
-      <span class="tb-ico" style="animation:heartPulse 2s ease-in-out infinite">â¤ï¸</span>
+      <span class="tb-ico" style="animation:heartPulse 2s ease-in-out infinite">❤️</span>
       <span class="tb-num" id="hp-num" style="color:var(--red)">8<span style="font-size:16px;opacity:.7">/10</span></span>
     </div>
   </div>
 
   <div class="xpbar">
-    <span class="xp-lbl" id="xp-lbl">â¡ 340 / 500 XP</span>
+    <span class="xp-lbl" id="xp-lbl">⚡ 340 / 500 XP</span>
     <div class="xp-track"><div class="xp-fill" id="xp-fill" style="width:68%"></div></div>
   </div>
 
@@ -137,10 +137,10 @@ html,body{height:100%;overflow:hidden;font-family:'Nunito',sans-serif;font-weigh
     <div class="tab active" id="tab-path">
       <div class="zone-banner">
         <div>
-          <div class="zb-sub">Zone 1 Â· Iron Keep</div>
+          <div class="zb-sub">Zone 1 · Iron Keep</div>
           <div class="zb-name">Body Recomp Journey</div>
         </div>
-        <button class="zb-btn">â¡</button>
+        <button class="zb-btn">≡</button>
       </div>
       <div class="path-scroll" id="path-scroll">
         <div class="path-inner" id="path-inner">
@@ -168,11 +168,11 @@ html,body{height:100%;overflow:hidden;font-family:'Nunito',sans-serif;font-weigh
   </div>
 
   <div class="bnav">
-    <button class="nb on" onclick="setTab('path',this)"><span class="nb-ico">ðºï¸</span><span>Path</span></button>
-    <button class="nb" onclick="setTab('quests',this)"><span class="nb-ico">âï¸</span><span>Quests</span></button>
-    <button class="nb" onclick="setTab('league',this)"><span class="nb-ico">ð</span><span>League</span></button>
-    <button class="nb" onclick="setTab('stats',this)"><span class="nb-ico">ð</span><span>Stats</span></button>
-    <button class="nb" onclick="setTab('profile',this)"><span class="nb-ico">ð¤</span><span>Profile</span></button>
+    <button class="nb on" onclick="setTab('path',this)"><span class="nb-ico">🗺️</span><span>Path</span></button>
+    <button class="nb" onclick="setTab('quests',this)"><span class="nb-ico">⚔️</span><span>Quests</span></button>
+    <button class="nb" onclick="setTab('league',this)"><span class="nb-ico">🏆</span><span>League</span></button>
+    <button class="nb" onclick="setTab('stats',this)"><span class="nb-ico">📊</span><span>Stats</span></button>
+    <button class="nb" onclick="setTab('profile',this)"><span class="nb-ico">👤</span><span>Profile</span></button>
   </div>
 
 </div>
@@ -188,7 +188,7 @@ html,body{height:100%;overflow:hidden;font-family:'Nunito',sans-serif;font-weigh
     </div>
   </div>
   <div class="modal-desc" id="modal-desc"></div>
-  <button class="start-btn" onclick="startWorkout()">â¶ START WORKOUT</button>
+  <button class="start-btn" onclick="startWorkout()">▶ START WORKOUT</button>
 </div>
 
 <div id="toast-host"></div>
@@ -198,44 +198,44 @@ var G = {level:7,xp:340,xpNext:500,streak:5,hearts:8,maxH:10,stats:{STR:74,AGI:5
 
 var NODES = [
   {id:0,type:'chest',  x:.50,y: 62, label:'33/50',   desc:'Zone 1 milestone',               reward:'100 XP'},
-  {id:1,type:'done',   x:.73,y:188, icon:'â­',label:'Legendary', desc:'Complete a perfect-form session',  reward:'75 XP'},
-  {id:2,type:'done',   x:.27,y:314, icon:'ðª',label:'Strength',  desc:'4 sets of compound lifts',         reward:'75 XP'},
-  {id:3,type:'done',   x:.68,y:440, icon:'ð',label:'Cardio',    desc:'30 min zone 2 cardio session',     reward:'75 XP'},
-  {id:4,type:'current',x:.30,y:566, icon:'ð¥',label:'Core Burn', desc:'3 rounds of core circuit training',reward:'80 XP'},
-  {id:5,type:'locked', x:.70,y:692, icon:'ð§',label:'Flex Day',  desc:'45 min mobility and stretch',      reward:'60 XP'},
-  {id:6,type:'locked', x:.28,y:818, icon:'ð¯',label:'Endurance', desc:'45 min HIIT interval run',         reward:'90 XP'},
-  {id:7,type:'locked', x:.70,y:944, icon:'â¡',label:'Power Up',  desc:'Max effort compound lifts',        reward:'100 XP'},
-  {id:8,type:'boss',   x:.38,y:1070,icon:'ð',label:'BOSS FIGHT',desc:'Full-body 60-min gauntlet',        reward:'250 XP'},
-  {id:9,type:'locked', x:.68,y:1196,icon:'ð',label:'Max Lift',  desc:'Personal record attempt',          reward:'120 XP'}
+  {id:1,type:'done',   x:.73,y:188, icon:'⭐',label:'Legendary', desc:'Complete a perfect-form session',  reward:'75 XP'},
+  {id:2,type:'done',   x:.27,y:314, icon:'💪',label:'Strength',  desc:'4 sets of compound lifts',         reward:'75 XP'},
+  {id:3,type:'done',   x:.68,y:440, icon:'🏃',label:'Cardio',    desc:'30 min zone 2 cardio session',     reward:'75 XP'},
+  {id:4,type:'current',x:.30,y:566, icon:'🔥',label:'Core Burn', desc:'3 rounds of core circuit training',reward:'80 XP'},
+  {id:5,type:'locked', x:.70,y:692, icon:'🧘',label:'Flex Day',  desc:'45 min mobility and stretch',      reward:'60 XP'},
+  {id:6,type:'locked', x:.28,y:818, icon:'🎯',label:'Endurance', desc:'45 min HIIT interval run',         reward:'90 XP'},
+  {id:7,type:'locked', x:.70,y:944, icon:'⚡',label:'Power Up',  desc:'Max effort compound lifts',        reward:'100 XP'},
+  {id:8,type:'boss',   x:.38,y:1070,icon:'💀',label:'BOSS FIGHT',desc:'Full-body 60-min gauntlet',        reward:'250 XP'},
+  {id:9,type:'locked', x:.68,y:1196,icon:'🏋',label:'Max Lift',  desc:'Personal record attempt',          reward:'120 XP'}
 ];
 var PATH_H = 1310;
 var CUR_IDX = 4;
 
 var QUESTS = [
-  {icon:'ðª',name:'Strength Week',desc:'Complete 3 strength workouts',prog:2,total:3,reward:'150 XP',col:'#ff4b4b'},
-  {icon:'ð',name:'Cardio King',  desc:'Run 10 km total this week',  prog:6.2,total:10,reward:'200 XP',col:'#1cb0f6',unit:'km'},
-  {icon:'ð¥',name:'On Fire!',     desc:'Maintain a 7-day streak',    prog:5,total:7,reward:'Special Badge',col:'#ff9600'},
-  {icon:'âï¸',name:'Body Check',  desc:'Log your weight 3 times',    prog:1,total:3,reward:'100 XP',col:'#ce82ff'}
+  {icon:'💪',name:'Strength Week',desc:'Complete 3 strength workouts',prog:2,total:3,reward:'150 XP',col:'#ff4b4b'},
+  {icon:'🏃',name:'Cardio King',  desc:'Run 10 km total this week',  prog:6.2,total:10,reward:'200 XP',col:'#1cb0f6',unit:'km'},
+  {icon:'🔥',name:'On Fire!',     desc:'Maintain a 7-day streak',    prog:5,total:7,reward:'Special Badge',col:'#ff9600'},
+  {icon:'⚖️',name:'Body Check',  desc:'Log your weight 3 times',    prog:1,total:3,reward:'100 XP',col:'#ce82ff'}
 ];
 
 var LB = [
-  {name:'TITAN',  xp:820,e:'ð¦'},
-  {name:'PHOENIX',xp:755,e:'ð¦'},
-  {name:'WOLF',   xp:692,e:'ðº'},
-  {name:'HERO',   xp:340,e:'âï¸',me:true},
-  {name:'BLADE',  xp:280,e:'ð¡'},
-  {name:'STORM',  xp:210,e:'â¡'}
+  {name:'TITAN',  xp:820,e:'🦁'},
+  {name:'PHOENIX',xp:755,e:'🦅'},
+  {name:'WOLF',   xp:692,e:'🐺'},
+  {name:'HERO',   xp:340,e:'⚔️',me:true},
+  {name:'BLADE',  xp:280,e:'🗡'},
+  {name:'STORM',  xp:210,e:'⚡'}
 ];
 
 var TROPHIES = [
-  {i:'ð¥',n:'First Flame',g:true},{i:'ðª',n:'Iron Will',g:true},
-  {i:'ð',n:'Runner',g:true},    {i:'âï¸',n:'Warrior',g:true},
-  {i:'ð',n:'Champion',g:false}, {i:'ð',n:'Legend',g:false},
-  {i:'ð',n:'Diamond',g:false},  {i:'ð',n:'Dragon',g:false},
-  {i:'ð',n:'Midnight',g:false}
+  {i:'🔥',n:'First Flame',g:true},{i:'💪',n:'Iron Will',g:true},
+  {i:'🏃',n:'Runner',g:true},    {i:'⚔️',n:'Warrior',g:true},
+  {i:'👑',n:'Champion',g:false}, {i:'🌟',n:'Legend',g:false},
+  {i:'💎',n:'Diamond',g:false},  {i:'🐉',n:'Dragon',g:false},
+  {i:'🌙',n:'Midnight',g:false}
 ];
 
-/* âââ MASCOT (string concat, no nested template literals) âââ */
+/* ─── MASCOT (string concat, no nested template literals) ─── */
 function mascotSVG(sz, victory) {
   if (!victory) victory = false;
   var h = Math.round(sz * 160 / 120);
@@ -259,9 +259,9 @@ function mascotSVG(sz, victory) {
     '</g>';
 
   var stars = victory ?
-    '<text x="6"  y="62" font-size="18">â­</text>' +
-    '<text x="88" y="58" font-size="18">â­</text>' +
-    '<text x="50" y="14" font-size="15">â¨</text>' : '';
+    '<text x="6"  y="62" font-size="18">⭐</text>' +
+    '<text x="88" y="58" font-size="18">⭐</text>' +
+    '<text x="50" y="14" font-size="15">✨</text>' : '';
 
   return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" width="' + sz + '" height="' + h + '">' +
     '<ellipse cx="60" cy="158" rx="25" ry="7" fill="rgba(0,0,0,.35)"/>' +
@@ -302,7 +302,7 @@ function mascotSVG(sz, victory) {
 }
 function irisColor(c) { return c; } /* helper to avoid inline ternary in string concat */
 
-/* âââ BUILD PATH âââ */
+/* ─── BUILD PATH ─── */
 function buildPath() {
   var inner = document.getElementById('path-inner');
   if (!inner) return;
@@ -358,17 +358,17 @@ function buildPath() {
     if (nd.type === 'chest') el.style.borderRadius = '22px';
 
     var html = '';
-    if (nd.type === 'chest')  html = 'ð¦';
-    else if (nd.type === 'locked') html = 'ð';
+    if (nd.type === 'chest')  html = '📦';
+    else if (nd.type === 'locked') html = '🔒';
     else html = nd.icon;
 
-    if (nd.type === 'done') html += '<div class="check-badge">â</div>';
+    if (nd.type === 'done') html += '<div class="check-badge">✓</div>';
 
     var lcolor = nd.type === 'locked' ? 'var(--dim)' :
                  nd.type === 'current' ? 'var(--green)' :
                  nd.type === 'done'    ? '#88cc44' : '#fff';
     var lshadow = nd.type === 'current' ? 'text-shadow:0 0 12px rgba(88,204,2,.7)' : '';
-    var ltxt = nd.type === 'chest' ? nd.label + ' ð' : nd.label;
+    var ltxt = nd.type === 'chest' ? nd.label + ' 💎' : nd.label;
     html += '<div class="node-lbl" style="color:' + lcolor + ';' + lshadow + '">' + ltxt + '</div>';
     el.innerHTML = html;
 
@@ -395,7 +395,7 @@ function buildPath() {
   scrollEl.scrollTop = target;
 }
 
-/* âââ TAB SYSTEM âââ */
+/* ─── TAB SYSTEM ─── */
 var statsRendered = false;
 
 function setTab(name, btn) {
@@ -408,19 +408,19 @@ function setTab(name, btn) {
   if (name === 'stats' && !statsRendered) { statsRendered = true; renderStats(); }
 }
 
-/* âââ RENDER CONTENT âââ */
+/* ─── RENDER CONTENT ─── */
 function renderAll() {
-  var medals = ['ð¥','ð¥','ð¥'];
+  var medals = ['🥇','🥈','🥉'];
 
   /* Quests */
-  var qhtml = '<div class="section-title" style="color:var(--gold)">âï¸ Active Quests</div>';
+  var qhtml = '<div class="section-title" style="color:var(--gold)">⚔️ Active Quests</div>';
   for (var i = 0; i < QUESTS.length; i++) {
     var q = QUESTS[i];
     var pct = Math.min(100, (q.prog / q.total) * 100);
     var txt = q.unit ? q.prog + '/' + q.total + ' ' + q.unit : q.prog + '/' + q.total;
     qhtml += '<div class="quest-card">' +
       '<div class="quest-head"><span class="quest-ico">' + q.icon + '</span>' +
-      '<div><div class="quest-name">' + q.name + '</div><div class="quest-reward">ð ' + q.reward + '</div></div></div>' +
+      '<div><div class="quest-name">' + q.name + '</div><div class="quest-reward">🎁 ' + q.reward + '</div></div></div>' +
       '<div class="quest-desc">' + q.desc + '</div>' +
       '<div class="quest-row"><div class="quest-track"><div class="quest-fill" style="width:' + pct + '%;background:' + q.col + '"></div></div>' +
       '<span class="quest-num">' + txt + '</span></div>' +
@@ -429,7 +429,7 @@ function renderAll() {
   document.getElementById('quests-content').innerHTML = qhtml;
 
   /* League */
-  var lhtml = '<div class="section-title" style="color:var(--purple)">ð League This Week</div>';
+  var lhtml = '<div class="section-title" style="color:var(--purple)">🏆 League This Week</div>';
   for (var i = 0; i < LB.length; i++) {
     var p = LB[i];
     var rank = medals[i] || '#' + (i + 1);
@@ -440,20 +440,20 @@ function renderAll() {
       '<div class="lb-rank">' + rank + '</div>' +
       '<div class="lb-av" style="background:' + avBg + '">' + p.e + '</div>' +
       '<div class="lb-name">' + p.name + meTxt + '</div>' +
-      '<div class="lb-xp">ð ' + p.xp + '</div>' +
+      '<div class="lb-xp">💎 ' + p.xp + '</div>' +
       '</div>';
   }
   document.getElementById('league-content').innerHTML = lhtml;
 
   /* Profile */
   var prows = [
-    ['ð¥', G.streak + '-day streak', 'var(--orange)'],
-    ['ð', G.xp + ' total XP',       'var(--blue)'],
-    ['âï¸', 'Level ' + G.level + ' Warrior', 'var(--gold)'],
-    ['â¤ï¸', G.hearts + '/' + G.maxH + ' HP', 'var(--red)']
+    ['🔥', G.streak + '-day streak', 'var(--orange)'],
+    ['💎', G.xp + ' total XP',       'var(--blue)'],
+    ['⚔️', 'Level ' + G.level + ' Warrior', 'var(--gold)'],
+    ['❤️', G.hearts + '/' + G.maxH + ' HP', 'var(--red)']
   ];
   var phtml = '<div class="profile-wrap">' +
-    '<div style="font-size:30px;font-weight:900;color:var(--green)">âï¸ HERO</div>' +
+    '<div style="font-size:30px;font-weight:900;color:var(--green)">⚔️ HERO</div>' +
     mascotSVG(130) +
     '<div class="profile-card">';
   for (var i = 0; i < prows.length; i++) {
@@ -464,18 +464,18 @@ function renderAll() {
   document.getElementById('profile-content').innerHTML = phtml;
 }
 
-/* âââ STATS âââ */
+/* ─── STATS ─── */
 function renderStats() {
   var defs = [
-    {k:'STR', col:'#ff4b4b', lbl:'STRENGTH',  ico:'ðª'},
-    {k:'AGI', col:'#58cc02', lbl:'AGILITY',   ico:'ð'},
-    {k:'VIT', col:'#1cb0f6', lbl:'VITALITY',  ico:'â¤ï¸'},
-    {k:'DISC',col:'#ce82ff', lbl:'DISCIPLINE',ico:'ð¯'}
+    {k:'STR', col:'#ff4b4b', lbl:'STRENGTH',  ico:'💪'},
+    {k:'AGI', col:'#58cc02', lbl:'AGILITY',   ico:'🏃'},
+    {k:'VIT', col:'#1cb0f6', lbl:'VITALITY',  ico:'❤️'},
+    {k:'DISC',col:'#ce82ff', lbl:'DISCIPLINE',ico:'🎯'}
   ];
   var r = 42;
   var circ = 2 * Math.PI * r;
 
-  var shtml = '<div class="section-title" style="color:var(--blue)">ð Your Stats</div><div class="stats-grid">';
+  var shtml = '<div class="section-title" style="color:var(--blue)">📊 Your Stats</div><div class="stats-grid">';
   for (var i = 0; i < defs.length; i++) {
     var d = defs[i];
     shtml += '<div class="stat-card">' +
@@ -494,7 +494,7 @@ function renderStats() {
       '<div class="stat-name">' + d.ico + ' ' + d.lbl + '</div>' +
     '</div>';
   }
-  shtml += '</div><div style="font-size:24px;font-weight:900;color:var(--gold);margin-bottom:16px">ð Achievements</div><div class="trophy-grid">';
+  shtml += '</div><div style="font-size:24px;font-weight:900;color:var(--gold);margin-bottom:16px">🏆 Achievements</div><div class="trophy-grid">';
   for (var i = 0; i < TROPHIES.length; i++) {
     var t = TROPHIES[i];
     shtml += '<div class="trophy-card' + (t.g ? ' got' : '') + '">' +
@@ -514,19 +514,19 @@ function renderStats() {
   }, 60);
 }
 
-/* âââ INTERACTIONS âââ */
+/* ─── INTERACTIONS ─── */
 var activeNode = null;
 
 function handleNodeTap(node) {
   if (node.type === 'chest') {
     gainXP(100);
-    showToast('ð¦ Milestone opened! +100 XP');
+    showToast('📦 Milestone opened! +100 XP');
     return;
   }
   activeNode = node;
-  document.getElementById('modal-icon').textContent  = node.icon || 'ðª';
+  document.getElementById('modal-icon').textContent  = node.icon || '💪';
   document.getElementById('modal-title').textContent = node.label;
-  document.getElementById('modal-reward').textContent = 'ð ' + node.reward;
+  document.getElementById('modal-reward').textContent = '🎁 ' + node.reward;
   document.getElementById('modal-desc').textContent  = node.desc;
   document.getElementById('overlay').classList.add('on');
   document.getElementById('modal').classList.add('on');
@@ -544,14 +544,14 @@ function startWorkout() {
   closeModal();
   var xp = parseInt(node.reward) || 75;
   gainXP(xp);
-  showToast('ð ' + node.label + ' complete! +' + xp + ' XP');
+  showToast('🎉 ' + node.label + ' complete! +' + xp + ' XP');
 }
 
 function gainXP(amount) {
   G.xp = Math.min(G.xpNext, G.xp + amount);
   document.getElementById('xp-num').textContent = G.xp;
   document.getElementById('xp-fill').style.width = Math.min(100, (G.xp / G.xpNext) * 100) + '%';
-  document.getElementById('xp-lbl').textContent = 'â¡ ' + G.xp + ' / ' + G.xpNext + ' XP';
+  document.getElementById('xp-lbl').textContent = '⚡ ' + G.xp + ' / ' + G.xpNext + ' XP';
 }
 
 function showToast(msg) {
@@ -568,14 +568,14 @@ function showToast(msg) {
   }, 2600);
 }
 
-/* âââ RESIZE âââ */
+/* ─── RESIZE ─── */
 var resizeTimer;
 window.addEventListener('resize', function() {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(buildPath, 250);
 });
 
-/* âââ INIT âââ */
+/* ─── INIT ─── */
 window.addEventListener('load', function() {
   try {
     renderAll();
